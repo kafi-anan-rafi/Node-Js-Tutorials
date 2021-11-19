@@ -1,6 +1,6 @@
-// evey Node application has a Main module
+// loading module 
+const logger = require('./logger') // always use const data type to prevent errors
 
-console.log(module); // shows the module
+// logger.log("Mosh Hamedani");   ## calling as Object 
 
-// in Node every file is a Module
-// variables & functions defined that module is scoped to that module
+logger('Mosh Hamedani'); // calling as Function 

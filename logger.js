@@ -6,7 +6,7 @@ function log(message) {
 }
 
 // exporting log() public
-module.exports.log = log;
+module.exports = log; // exporting as function not object
 
 // exporting in different name 
-module.exports.endPoint = url;
+// module.exports.endPoint = url; // exporting as Object 
