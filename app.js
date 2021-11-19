@@ -1,22 +1,6 @@
-console.log() // global Object 
+// evey Node application has a Main module
 
-setTimeout() // global Object 
-clearTimeout() // global Object 
+console.log(module); // shows the module
 
-setInterval() // global Object 
-clearTimeout() // global Object 
-
-var message = '';
-
-// browser -> window represents global object
-window.console.log();
-window.setTimeout();
-
-// in Node we have global as global object
-global.console.log()
-global.setInterval()
-
-console.log(global.message) // undefined 
-
-// because Variables and Functions are scoped to that file/module 
-// thats why they are not available to the global object
+// in Node every file is a Module
+// variables & functions defined that module is scoped to that module
