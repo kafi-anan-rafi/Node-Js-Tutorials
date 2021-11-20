@@ -1,15 +1,17 @@
 
 const http = require('http');
-const server = http.createServer();
 
-server.on('connection', (socket) => {
-  console.log('New Connection...');
+const server = http.createServer((req, res) => {
+  if(req.url === '/') {
+    res.write('Hello World!');
+    res.end();
+  }
+  if(req.url === '/api/courses') {
+    res.write(JSON.stringify([1, 2, 3, 4, 5]));
+    res.end();
+  }
 });
 
 server.listen(3000);
-
-// This server is an EventEmitter. That means we can use all of the methods of EventEmitter.
-// 1. server.on()
-// 2. server.addListener()
 
 console.log('Listening on port 3000...');
