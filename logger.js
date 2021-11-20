@@ -1,12 +1,16 @@
-var url = 'http://mylogger.io/log';
+(function (exports, require, module, __filename, __dirname) { // module wrapper function
+  // when module is excuted, it wrapped inside a function 
+  // actual function is more complicated than this one 
 
-function log(message) {
-  // send an HTTP request 
-  console.log(message);
-}
+  var url = "http://mylogger.io/log";
 
-// exporting log() public
-module.exports = log; // exporting as function not object
+  function log(message) {
+    // send an HTTP request
+    console.log(message);
+  }
 
-// exporting in different name 
-// module.exports.endPoint = url; // exporting as Object 
+  module.exports = log;
+  exports.log = log // same as module.exports = log
+  exports = log // this is wrong because exports is a refrence of module.exports - we can't change that refrence
+
+});
