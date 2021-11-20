@@ -1,7 +1,11 @@
-const os = require('os'); // OS Module
+const fs = require('fs') // fs module 
 
-var totalMemory = os.totalmem();
-var freeMemory = os.freemem();
+// synchronous methods 
+var files = fs.readdirSync('./')
+console.log(files);
 
-console.log(`Total memory: ${totalMemory}`);
-console.log(`Free momory: ${freeMemory}`);
+// asynchronous methods
+fs.readdir('$', function (err, files) {
+  if (err) console.log('Error', err);
+  else console.log("Result", files)
+})
