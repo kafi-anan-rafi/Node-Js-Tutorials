@@ -10,8 +10,6 @@ class Logger extends EventEmitter {
     // Raise Event
     this.emit('messageLogged', { id: 1, url: 'http://' });
   }
-
 }
-
 
 module.exports = Logger;
